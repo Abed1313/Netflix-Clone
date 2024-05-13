@@ -1,0 +1,15 @@
+.des {
+    background-color: #4b4272b2; /* Setting background color */
+    padding: 15px; /* Adding padding */
+  }
+  
+  .des a {
+    color: white; /* Setting link text color */
+    text-decoration: none; /* Removing underline from links */
+    margin-right: 10px; /* Adding margin between links */
+  }
+  
+  .des a:hover {
+    text-decoration: underline; /* Underlining links on hover */
+  }
+  
