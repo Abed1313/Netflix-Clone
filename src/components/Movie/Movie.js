@@ -15,19 +15,27 @@ function Movie(props) {
         setShowMore(!showMore);
 
     }
+
     const [showFlag, setHhowFlag] = useState(false);
 
     const [cleckedMovie, setCleckedMovie] = useState({});
 
+    const [commentMovie, setCommentMovie] = useState()
 
-    const handelShow = () => {
-        setCleckedMovie();
+
+    const handelShow = (props) => {
+        setCleckedMovie(props);
+        console.log(props)
         setHhowFlag(true);
+
     }
 
     const handelClose = () => {
         setHhowFlag(false);
+        setCommentMovie()
     }
+
+   
 
     return (
         <>
@@ -46,12 +54,23 @@ function Movie(props) {
                             <Card.Text>
                                 Date: {props.release_date}
                             </Card.Text>
-                            <Button variant="primary" className="add-favorite-btn" onClick={() => { handelShow() }}>Add to Favorite</Button>
+                            <Button variant="primary" className="add-favorite-btn" onClick={() => { handelShow(props) }}>Add to Favorite</Button>
                         </Card.Body>
                     </Card>
                 </Col>
             </Row>
-            <ModalMovie showFlag={showFlag} handelClose={handelClose} cleckedMovie={cleckedMovie} />
+            <ModalMovie
+    showFlag={showFlag}
+    handelClose={handelClose}
+    cleckedMovie={cleckedMovie}
+    commentMovie={commentMovie}
+    setCommentMovie={setCommentMovie}
+    title={props.title}
+    release_date={props.release_date}
+    image={props.image}
+    overview={props.overview}
+/>
+
         </>
     )
 };
