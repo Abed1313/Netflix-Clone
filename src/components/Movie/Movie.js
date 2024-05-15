@@ -22,7 +22,6 @@ function Movie(props) {
 
     const [commentMovie, setCommentMovie] = useState()
 
-
     const handelShow = (props) => {
         setCleckedMovie(props);
         console.log(props)
@@ -35,7 +34,7 @@ function Movie(props) {
         setCommentMovie()
     }
 
-   
+  
 
     return (
         <>
@@ -50,26 +49,35 @@ function Movie(props) {
                                 <button className="add-favorite-btn" onClick={useStateForBouton}>{showMore ? "Show Less" : "Show More"}</button>
                             </h5>
 
-                            <Card.Text>ID: {props.id}</Card.Text>
+                         
                             <Card.Text>
                                 Date: {props.release_date}
                             </Card.Text>
+                            
                             <Button variant="primary" className="add-favorite-btn" onClick={() => { handelShow(props) }}>Add to Favorite</Button>
+                            
                         </Card.Body>
                     </Card>
                 </Col>
             </Row>
             <ModalMovie
-    showFlag={showFlag}
-    handelClose={handelClose}
-    cleckedMovie={cleckedMovie}
-    commentMovie={commentMovie}
-    setCommentMovie={setCommentMovie}
-    title={props.title}
-    release_date={props.release_date}
-    image={props.image}
-    overview={props.overview}
-/>
+                showFlag={showFlag}
+                handelClose={handelClose}
+                cleckedMovie={cleckedMovie}
+                commentMovie={commentMovie}
+                setCommentMovie={setCommentMovie}
+                title={props.title}
+                release_date={props.release_date}
+                image={props.image}
+                overview={props.overview}
+            />
+            {/* <FavList  showFlag={showFlag}
+                handelClose={handelClose}
+                cleckedMovie={cleckedMovie}
+                commentMovie={commentMovie}
+                setCommentMovie={setCommentMovie} 
+                useStateForBouton ={useStateForBouton}
+                deleteMovie={deleteMovie} /> */}
 
         </>
     )
